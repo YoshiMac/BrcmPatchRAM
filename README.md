@@ -8,8 +8,6 @@ was having problems loading BT firmware onto my Dell DW1820A wifi/bt card  (vid 
 adding an iosleep on HCI_EOF_made it worked
 
 
-For the most part this fork is kept in sync with the-darkvoid's verson.  We are working together to improve the project.
-
 
 ###RehabMan Fork Downloads
 
