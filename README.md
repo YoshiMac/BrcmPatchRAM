@@ -1,4 +1,12 @@
-###BrcmPatchRAM -- RehabMan fork
+###BrcmPatchRAM -- YoshiMac Fork
+
+For the most part this fork is kept in sync with Rehabman's version.  
+I am very new to this so better to go to Rehabman Gitsite
+
+was having problems loading BT firmware onto my Dell DW1820A wifi/bt card  (vid 0a5c:pid 6412 device) which based on Broadcom BCM4350C5
+
+adding an iosleep on HCI_EOF_made it worked
+
 
 For the most part this fork is kept in sync with the-darkvoid's verson.  We are working together to improve the project.
 
