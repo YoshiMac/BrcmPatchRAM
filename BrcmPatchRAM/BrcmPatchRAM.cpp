@@ -1080,6 +1080,7 @@ IOReturn BrcmPatchRAM::hciParseResponse(void* response, UInt16 length, void* out
                     mDeviceState = kInstructionWritten;
                     break;
                 case HCI_OPCODE_END_OF_RECORD:
+                    IOSleep(20);
                     DebugLog("[%04x:%04x]: END OF RECORD complete (status: 0x%02x, length: %d bytes).\n",
                              mVendorId, mProductId, event->status, header->length);
                     
@@ -1241,7 +1242,9 @@ bool BrcmPatchRAM::performUpgrade()
                 // responses.
                 IOSleep(10);
 
-                // Write first instruction to trigger response
+                // Write first 2 instructions to trigger response
+                if ((data = OSDynamicCast(OSData, iterator->getNextObject())))
+                    bulkWrite(data->getBytesNoCopy(), data->getLength());
                 if ((data = OSDynamicCast(OSData, iterator->getNextObject())))
                     bulkWrite(data->getBytesNoCopy(), data->getLength());
                 break;
